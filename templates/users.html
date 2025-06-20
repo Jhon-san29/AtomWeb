@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Registered Users</h2>
+    <a href="{{ url_for('home') }}" class="btn btn-primary">
+        <i class="bi bi-arrow-left"></i> Back to Home
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Phone Number</th>
+                        <th>Status</th>
+                        <th>Access Token</th>
+                        <th>Refresh Token</th>
+                        <th>Registered At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>+95{{ user.phone_number }}</td>
+                        <td>
+                            {% if user.status == 'new' %}
+                                <span class="status-badge status-new">New</span>
+                            {% elif user.status == 'otp_sent' %}
+                                <span class="status-badge status-otp_sent">OTP Sent</span>
+                            {% elif user.status == 'verified' %}
+                                <span class="status-badge status-verified">Verified</span>
+                            {% else %}
+                                <span class="status-badge status-failed">{{ user.status }}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ user.access_token or 'N/A' }}</td>
+                        <td>{{ user.refresh_token or 'N/A' }}</td>
+                        <td>{{ user.created_at }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="6" class="text-center">No users found</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

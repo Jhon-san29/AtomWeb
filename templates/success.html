@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-success">
+                <h3 class="text-white">Verification Successful!</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                    <h4 class="mt-3">Your phone number +95{{ phone_number }} has been verified</h4>
+                </div>
+                
+                <div class="alert alert-success text-center">
+                    <strong>Authentication tokens generated successfully!</strong>
+                </div>
+                
+                <div class="mb-4">
+                    <h5>Access Token</h5>
+                    <div class="token-block">{{ access_token }}</div>
+                    <div class="text-muted">Expires: {{ access_expire }}</div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5>Refresh Token</h5>
+                    <div class="token-block">{{ refresh_token }}</div>
+                    <div class="text-muted">Expires: {{ refresh_expire }}</div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <strong><i class="bi bi-exclamation-triangle"></i> Important:</strong> 
+                    Store these tokens securely. They provide access to your account.
+                </div>
+                
+                <div class="d-grid gap-2 mt-4">
+                    <a href="{{ url_for('home') }}" class="btn btn-success">
+                        <i class="bi bi-house"></i> Back to Home
+                    </a>
+                </div>
+                
+                <div class="mt-3 text-center">
+                    <a href="{{ url_for('user_list') }}" class="text-decoration-none">
+                        <i class="bi bi-people"></i> View All Users
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

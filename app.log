@@ -1,0 +1,398 @@
+2025-06-20 16:45:08,596 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-06-20 16:50:47,493 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-06-20 16:59:07,840 - app - INFO - Sending OTP to 959762307593 (User ID: 1)
+2025-06-20 16:59:08,511 - app - INFO - OTP sent successfully to 959762307593
+2025-06-20 16:59:26,883 - app - INFO - Verifying OTP for 959762307593 | Server code: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjIwMjAtMTItMTg6ZWY1NjYxYTI0N2Y2NjUxYWMyZjkyNmRiYjI2N2U2MzA0YzNkNDVkYyJ9.eyJ0eXBlIjoibG9jYWwtYXV0aGVudGljYXRpb24tb3RwIiwiaXNzIjoiaHR0cHM6XC9cL3N0b3JlLmF0b20uY29tLm1tXC9teXRtYXBpIiwiYXVkIjoiYW5kcm9pZCIsImlhdCI6MTc1MDQxNTM0OCwiZXhwIjoxNzUwNDE1NDA4LCJvdHBJZCI6Ijg0OTQ1MDU2Iiwib3RwSXAiOiI2OS4xNjAuMjYuMSIsIm1zaXNkbiI6Ijk1OTc2MjMwNzU5MyJ9.rAjtdOHMEPrqDMCgoxQqTyGQCjvEsvymftDpjSVMWjXZRduvuthqrKq2nKGyszqqtA-Yopdm4bZqqdSPHoJmJHfNoAISTYfWncaLHuN6kNJe-HGt7vJihvfC5oW2O8oJuyn3_Fw3XkfGqhBE2FVzAXPPuuDwHzZgLDKPktu4QogiF_wR8vdgcK_Osc72Co8aRy7TIDBIwWUPYOGTzKS3T1dorLmC-x-UzbQgZmDMMhV-R4C9pQ6Bra8Tgc9FSYqXND0TfOc317J5O7N2V6g3BifCAU-4l-p4ziXId480qqGvDBtSuYkY-izSpoxzjme3hm8uHLxnJ7NdMVbXvwUzT3wSmKakUFkEY_07rd_9c3PBitHqGB9lI9lhSDVfQmkLoT5G-pahiFHf7gCJMTqDTx4ux_lD5e81hi8s0tVKt3Zhk7lnuV3a0TaI0BSFMeQCZbXydwvEUrZV9LcoapekNwh1Zr1CQlhcV_px0aegXZq3ZY7T9IceSwzMCnIV0udYPEEnmCzqtmv_bczG4RtiqE_etQgpSmg77LYfX4RghOUvxzjChDtIegVbi-joiFgPyaZsAAA9_6A9ajGWFpl2U8XpTBK_Q3IXPad3lwbuRIHKwI7f3dRe03rYoHSjnFymQZ4bIbEB4N0hxK6gOk9IHESxEsM_9xPf9gKY7v-U5gY | User OTP: 878886
+2025-06-20 16:59:29,238 - app - INFO - OTP verified for 959762307593
+2025-06-20 17:25:04,456 - app - ERROR - Exception on /admin/login [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 201, in admin_login
+    return render_template('admin_login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/kaung/atom_web/templates/admin_login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/kaung/atom_web/templates/base.html", line 112, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/templates/admin_login.html", line 37, in block 'content'
+    {% if not admin_exists() %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/jinja2/utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'admin_exists' is undefined
+2025-06-20 17:29:48,006 - app - ERROR - Exception on /admin/login [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 205, in admin_login
+    return render_template('admin_login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/kaung/atom_web/templates/admin_login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/kaung/atom_web/templates/base.html", line 112, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/templates/admin_login.html", line 37, in block 'content'
+    {% if not admin_exists() %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 151, in admin_exists
+    admin = conn.execute('SELECT * FROM admins').fetchone()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: admins
+2025-06-20 17:51:49,945 - app - INFO - Creating admins table...
+2025-06-20 17:53:16,225 - app - ERROR - Exception on /admin/login [POST]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 236, in admin_login
+    return redirect(url_for('index'))
+                    ^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'. Did you mean 'admin_setup' instead?
+2025-06-20 17:57:24,011 - app - ERROR - Exception on /admin/login [POST]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 214, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:02:32,299 - app - ERROR - Exception on /admin/login [POST]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 214, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:02:34,473 - app - ERROR - Exception on /admin/login [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 214, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:02:39,485 - app - ERROR - Exception on /admin/login [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 214, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:07:57,757 - app - ERROR - Exception on /admin/login [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 214, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:07:59,049 - app - ERROR - Exception on /admin/login [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 214, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:07:59,831 - app - ERROR - Exception on /admin/login [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 214, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:16:05,269 - app - INFO - Creating admins table...
+2025-06-20 18:16:35,808 - app - ERROR - Exception on /admin/login [POST]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 224, in admin_login
+    return redirect(url_for('home'))
+                    ^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/helpers.py", line 225, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home'. Did you mean 'admin_setup' instead?
+2025-06-20 18:21:14,920 - app - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 189, in decorated_function
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/app.py", line 580, in user_list
+    return render_template('users.html', users=display_users)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/kaung/atom_web/templates/users.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/kaung/atom_web/templates/base.html", line 112, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/templates/users.html", line 6, in block 'content'
+    <a href="{{ url_for('index') }}" class="btn btn-primary">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/flask/app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kaung/atom_web/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'. Did you mean 'admin_setup' instead?
+2025-06-20 18:23:57,201 - app - INFO - Sending OTP to 959762307593 (User ID: 1)
+2025-06-20 18:23:57,884 - app - INFO - OTP sent successfully to 959762307593
+2025-06-20 18:24:24,629 - app - INFO - Verifying OTP for 959762307593 | Server code: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjIwMjAtMTItMTg6ZWY1NjYxYTI0N2Y2NjUxYWMyZjkyNmRiYjI2N2U2MzA0YzNkNDVkYyJ9.eyJ0eXBlIjoibG9jYWwtYXV0aGVudGljYXRpb24tb3RwIiwiaXNzIjoiaHR0cHM6XC9cL3N0b3JlLmF0b20uY29tLm1tXC9teXRtYXBpIiwiYXVkIjoiYW5kcm9pZCIsImlhdCI6MTc1MDQyMDQzNywiZXhwIjoxNzUwNDIwNDk3LCJvdHBJZCI6Ijg0OTUxNjYyIiwib3RwSXAiOiI2OS4xNjAuMjYuMSIsIm1zaXNkbiI6Ijk1OTc2MjMwNzU5MyJ9.XAAmv1fTRlDvqeZsa1RVp2qsOjKnyvFJvlk4mIgACx6E2RPigIc77ltqfM8K52crqE7rCZ1-3VLQ2p7_H8P0IL-UUycTIaHldciSV2xnirriacGCVJafSl787rP3ePy79XslIFwxjal_cJX8ICkhGDm-NbVIzBlzp8nfAqvd9IixkCJsVfmblC2vOvA6flDJvZgWEs7yQnANZ_rS0W6qk8ygOyILeGMKpGNvBy5V5n_b-FqfYLW7XOtrtE5lLFUURFrg_KXxK4gqXQQe2dO9pawy_8nDuXElhuPxmyQNkB-GIddNop95xasWniclZVbNnJWbDuG9zZfGN0VHP-JqgXc1YNtgipdh2g0mCm1SBg00e4QJ5Mhcf-i9xhPz6TB4C-_w4-6LBoCw8FHionxnZstfU_XcCDFU0YxPvezX50_UewSXlcRaitMCas9PmFh8ZsMped7xrzDC-x72rg-BHJEWD7pK5J2nkXYtclXmzrWA9xCYPAwiLQxihaQVZsloqYS9AzJqiGq3lxdSK_6vnal8xwbP0mslNJoQ2NE5w8TqBXx3JETbD_7tZuzhtzIkw0M-uGoGcgQjw9KsD1d7hGGSl6ofUfyhfYoLJ9YU31B_k4LjDfny5nOeQCoQZxaw7py4hwVbAE4IVhDwVfOATXbQg7kLc6oeH7Guwos77NA | User OTP: 189229
+2025-06-20 18:24:26,116 - app - INFO - OTP verified for 959762307593

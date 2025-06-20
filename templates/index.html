@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3>Atom OTP Authentication</h3>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('send_otp') }}" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <div class="logo">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="text-center mb-4">Enter your phone number to receive OTP</h5>
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>Enter your 10-digit phone number</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>We'll send an OTP to your phone</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>Verify with the OTP to get tokens</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="phone_number" class="form-label">Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-group-text">+95</span>
+                            <input type="text" class="form-control" id="phone_number" name="phone_number" 
+                                   placeholder="Enter 10-digit number" maxlength="10" required>
+                        </div>
+                        <div class="form-text">Example: 9123456789 (without country code)</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Send OTP</button>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="{{ url_for('user_list') }}" class="text-decoration-none">
+                            <i class="bi bi-people"></i> View Registered Users
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
